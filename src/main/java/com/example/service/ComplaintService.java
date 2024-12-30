@@ -94,4 +94,8 @@ public class ComplaintService {
             userService.updateUser(technician);
         }
     }
+
+    public List<Complaint> getComplaintsByTechnicianId(Integer technicianId) {
+        return complaintDao.getByTechnicianId(technicianId);  
+    }
 }

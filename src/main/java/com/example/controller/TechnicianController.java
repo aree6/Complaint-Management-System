@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -32,6 +34,9 @@ public class TechnicianController {
         model.addAttribute("allComplaints", complaintService.getAllComplaintsForAdmin());
         model.addAttribute("pendingComplaints", complaintService.getPendingComplaintsForAdmin());
         model.addAttribute("resolvedComplaints", complaintService.getResolvedComplaintsForAdmin());
+        List<Complaint> assignedComplaints = complaintService.getComplaintsByTechnicianId(userId);
+        model.addAttribute("technicianComplaints", assignedComplaints);
+
         
         return "technician-dashboard";
     }

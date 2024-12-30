@@ -573,11 +573,7 @@
                                             <i class="bi bi-info-circle-fill"></i>
                                         </a>
                                     </td>
-                                    <td>
-                                        <span class="badge status-badge ${complaint.status eq 'PENDING' ? 'badge-pending' : 
-                                                                        complaint.status eq 'RESOLVED' ? 'badge-resolved' : 
-                                                                        complaint.status eq 'ASSIGNED' ? 'badge-assigned' : ''}">${complaint.status}</span>
-                                    </td>
+                                  
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary"
                                             onclick="window.location.href='${pageContext.request.contextPath}/admin/chat?complaintId=${complaint.id}'">
@@ -607,6 +603,7 @@
                             <tr>
                                 <th>Complaint ID</th>
                                 <th>Description</th>
+                                <th>Assigned to</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -624,7 +621,7 @@
                                     <td>
                                         <span class="badge status-badge ${complaint.status eq 'PENDING' ? 'badge-pending' : 
                                                                         complaint.status eq 'RESOLVED' ? 'badge-resolved' : 
-                                                                        complaint.status eq 'ASSIGNED' ? 'badge-assigned' : ''}">${complaint.status}</span>
+                                                                        complaint.status eq 'ASSIGNED' ? 'badge-assigned' : ''}">${complaint.getTechnician().name}</span>
                                     </td>
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary"
@@ -635,10 +632,10 @@
                                             onclick="window.location.href='${pageContext.request.contextPath}/admin/deleteComplaint/${complaint.id}'">
                                             <i class="bi bi-trash me-1"></i>Delete
                                         </button>
-                                        <button class="btn btn-sm btn-outline-success"
+                                        <!-- <button class="btn btn-sm btn-outline-success"
                                             onclick="window.location.href='${pageContext.request.contextPath}/admin/takeAction/${complaint.id}'">
                                             <i class="bi bi-check-circle me-1"></i>Take Action
-                                        </button>
+                                        </button> -->
                                     </td>
                                 </tr>
                             </c:forEach>

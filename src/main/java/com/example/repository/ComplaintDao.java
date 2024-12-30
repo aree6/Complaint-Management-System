@@ -49,9 +49,11 @@ public class ComplaintDao {
     // Get Complaints by Technician ID
     public List<Complaint> getByTechnicianId(int technicianId) {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("from Complaint where technician.id = :technicianId", Complaint.class)
-                    .setParameter("technicianId", technicianId)
-                    .list();
+            return session.createQuery(
+                "FROM Complaint WHERE technician.id = :technicianId AND status = 'ASSIGNED'", 
+                Complaint.class)
+                .setParameter("technicianId", technicianId)
+                .list();
         }
     }
 
@@ -106,6 +108,13 @@ public class ComplaintDao {
                     .list();
         }
     }
+
+    // public List<Complaint> findByTechnicianId(Integer technicianId) {
+    //     Session session = sessionFactory.getCurrentSession();
+    //     return session.createQuery("FROM Complaint WHERE technician.id = :technicianId", Complaint.class)
+    //                  .setParameter("technicianId", technicianId)
+    //                  .list();
+    // }
 
     
 }

@@ -512,17 +512,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${pendingComplaints}" var="complaint">
+                                    <c:forEach items="${technicianComplaints}" var="complaint">
                                         <tr data-status="${complaint.status}">
                                             <td>#${complaint.id}</td>
                                             <td class="description-cell">
                                                 ${complaint.title}
-                                                <a href="#" class="detail-link ms-2">
+                                                <a href="${pageContext.request.contextPath}/technician/complaint-details/${complaint.id}" 
+                                                   class="detail-link ms-2">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <span class="badge status-badge badge-pending">PENDING</span>
+                                                <span class="badge status-badge ${complaint.status eq 'ASSIGNED' ? 'badge-assigned' : ''}">
+                                                    ${complaint.status}
+                                                </span>
                                             </td>
                                             <td>
                                                 <button class="btn btn-sm btn-outline-primary action-btn"
