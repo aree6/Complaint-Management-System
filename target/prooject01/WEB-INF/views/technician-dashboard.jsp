@@ -460,6 +460,7 @@
                         </div>
                     </div>
 
+                    <!-- Apply the same styling to Resolved and Pending tabs -->
                     <!-- Resolved Complaints Tab -->
                     <div class="tab-pane fade" id="resolved">
                         <div class="table-responsive">
@@ -506,6 +507,7 @@
                                     <tr>
                                         <th>Complaint ID</th>
                                         <th>Description</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -519,6 +521,11 @@
                                                    class="detail-link ms-2">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
+                                            </td>
+                                            <td>
+                                                <span class="badge status-badge ${complaint.status eq 'ASSIGNED' ? 'badge-assigned' : ''}">
+                                                    ${complaint.status}
+                                                </span>
                                             </td>
                                             <td>
                                                 <button class="btn btn-sm btn-outline-primary action-btn"
