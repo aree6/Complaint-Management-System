@@ -520,7 +520,6 @@
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                             </td>
-                                           
                                             <td>
                                                 <button class="btn btn-sm btn-outline-primary action-btn"
                                                     onclick="window.location.href='${pageContext.request.contextPath}/technician/chat?complaintId=${complaint.id}'">
