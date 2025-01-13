@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:25 +0800] "GET /prooject01/ HTTP/1.1" 200 9825 http-bio-8080-exec-1 316
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:30 +0800] "GET /prooject01/login HTTP/1.1" 200 12566 http-bio-8080-exec-2 781
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:33 +0800] "POST /prooject01/login HTTP/1.1" 302 - http-bio-8080-exec-3 164
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:33 +0800] "GET /prooject01/student/dashboard HTTP/1.1" 200 52366 http-bio-8080-exec-4 311
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:43 +0800] "GET /prooject01/student/feedback-form/30 HTTP/1.1" 200 8922 http-bio-8080-exec-6 240
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:49 +0800] "GET /prooject01/student/dashboard HTTP/1.1" 200 52366 http-bio-8080-exec-8 109
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:05:52 +0800] "GET /prooject01/student/chat/44 HTTP/1.1" 200 17177 http-bio-8080-exec-10 102
+0:0:0:0:0:0:0:1 - - [13/Jan/2025:19:06:00 +0800] "GET /prooject01/student/dashboard HTTP/1.1" 200 52366 http-bio-8080-exec-2 99
